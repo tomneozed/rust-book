@@ -1,0 +1,15 @@
+# Lancer les tests en parallèle ou en séquence
+
+cargo test -- --test-threads=1
+
+# Afficher la sortie de la fonction
+
+cargo test -- --show-output
+
+# Exécuter des tests individuellement
+
+cargo test <nom_du_test>
+
+# Exécuter un sous-ensemble de tests en fonction de son nom
+
+cargo test <test_substring>
