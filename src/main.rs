@@ -14,11 +14,18 @@ use generiques::generiques;
 use tests::tests;
 use langagesFonctionnels::langagesFonctionnels;
 
+use rust_book::CouleurPrimaire;
+use rust_book::mixer;
+
 
 fn main() {
     //collections();
     //gestion_des_erreurs();
     // generiques();
-    tests();
-    langagesFonctionnels();
+    // tests();
+    // langagesFonctionnels();
+
+    let rouge = CouleurPrimaire::Rouge;
+    let jaune = CouleurPrimaire::Jaune;
+    mixer(rouge, jaune);
 }
