@@ -5,47 +5,55 @@ use std::process;
 use minigrep::Config;
 
 fn main() {
-    // Lire les valeurs des arguments
-    let args: Vec<String> = env::args().collect();
-    // println!("{:?}", args);
+    // // Lire les valeurs des arguments
+    // let args: Vec<String> = env::args().collect();
+    // // println!("{:?}", args);
 
-    // // Enregistrer les valeurs des arguments dans des variables
+    // // // Enregistrer les valeurs des arguments dans des variables
 
-    // let recherche = &args[1];
-    // let nom_fichier = &args[2];
+    // // let recherche = &args[1];
+    // // let nom_fichier = &args[2];
 
-    // println!("On recherche : {}", recherche);
-    // println!("Dans le fichier : {}", nom_fichier);
-    // // Lire un fichier
+    // // println!("On recherche : {}", recherche);
+    // // println!("Dans le fichier : {}", nom_fichier);
+    // // // Lire un fichier
 
-    // let contenu = fs::read_to_string(nom_fichier)
+    // // let contenu = fs::read_to_string(nom_fichier)
 
-    //     .expect("Quelque chose s'est mal passé lors de la lecture de votre fichier");
+    // //     .expect("Quelque chose s'est mal passé lors de la lecture de votre fichier");
     
-    // println!("Dans le texte: \n{}", contenu);
+    // // println!("Dans le texte: \n{}", contenu);
 
-    // Réarrangement du code 
+    // // Réarrangement du code 
 
-    // let (recherche, nom_fichier) = interpreter_config(&args);
+    // // let (recherche, nom_fichier) = interpreter_config(&args);
 
-    // println!("On recherche : {}", recherche);
-    // println!("Dans le fichier : {}", nom_fichier);
+    // // println!("On recherche : {}", recherche);
+    // // println!("Dans le fichier : {}", nom_fichier);
 
-    // let contenu = fs::read_to_string(nom_fichier)
-    //     .expect("Quelque chose s'est mal passé lors de la lecture de votre fichier");
+    // // let contenu = fs::read_to_string(nom_fichier)
+    // //     .expect("Quelque chose s'est mal passé lors de la lecture de votre fichier");
 
-    let config = Config::new(&args).unwrap_or_else(|err| {
+    // let config = Config::new(&args).unwrap_or_else(|err| {
+    //     eprintln!("Problème rencontré lors de l'interprétation des arguments : {}", err);
+    //     process::exit(1);
+    // });
+
+    // // println!("On recherche : {}", config.recherche);
+    // // println!("--- Dans le fichier : {} ---", config.nom_fichier);
+
+    // if let Err(e) = minigrep::run(config){
+    //     eprintln!("Erreur explicative : {}", e);
+    //     process::exit(1);
+    // }
+
+    // 13.3 - Amélioration de notre projet d'entrée/sortie
+
+    let config = Config::new(env::args()).unwrap_or_else(|err| {
         eprintln!("Problème rencontré lors de l'interprétation des arguments : {}", err);
         process::exit(1);
     });
 
-    // println!("On recherche : {}", config.recherche);
-    // println!("--- Dans le fichier : {} ---", config.nom_fichier);
-
-    if let Err(e) = minigrep::run(config){
-        eprintln!("Erreur explicative : {}", e);
-        process::exit(1);
-    }
 
 
 }

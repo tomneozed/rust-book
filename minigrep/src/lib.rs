@@ -9,15 +9,30 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn new(args: &[String]) -> Result<Config, &'static str> {
-        if args.len() < 3 {
-            return Err("Il n'y a pas assez d'arguments !")
-        }
-        let recherche = args[1].clone();
-        let nom_fichier = args[2].clone();
+    // pub fn new(args: &[String]) -> Result<Config, &'static str> {
+    //     if args.len() < 3 {
+    //         return Err("Il n'y a pas assez d'arguments !")
+    //     }
+    //     let recherche = args[1].clone();
+    //     let nom_fichier = args[2].clone();
 
-        // let sensible_casse = env::var("MINIGREP_INSENSIBLE_CASSE").is_err();
-        let sensible_casse = false;
+    //     // let sensible_casse = env::var("MINIGREP_INSENSIBLE_CASSE").is_err();
+    //     let sensible_casse = false;
+        
+    //     Ok(Config { recherche, nom_fichier, sensible_casse })
+    // }
+    pub fn new(mut args: env::Args) -> Result<Config, &'static str> {
+        args.next();
+        let recherche = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Nous n'avons pas de chaine de caracteres"),
+        };
+        let nom_fichier = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Nous n'avons pas de nom de fichier"),
+        };
+
+        let sensible_casse = env::var("MINIGREP_INSENSIBLE_CASSE").is_err();
         
         Ok(Config { recherche, nom_fichier, sensible_casse })
     }
@@ -71,16 +86,22 @@ C'est pas rustique";
     }
 }
 
+// pub fn rechercher<'a>(recherche: &str, contenu: &'a str) -> Vec<&'a str> {
+//     let mut resultats = Vec::new();
+
+//     for ligne in contenu.lines() {
+//         if ligne.contains(recherche) {
+//             resultats.push(ligne);
+//         }
+//     }
+//     resultats
+// }
+
 pub fn rechercher<'a>(recherche: &str, contenu: &'a str) -> Vec<&'a str> {
-
-    let mut resultats = Vec::new();
-
-    for ligne in contenu.lines() {
-        if ligne.contains(recherche) {
-            resultats.push(ligne);
-        }
-    }
-    resultats
+    contenu
+        .lines()
+        .filter(|lignes| ligne.contains(recherche))
+        .collect()
 }
 
 pub fn rechercher_insensible_casse<'a>(recherche: &str, contenu: &'a str) -> Vec<&'a str> {

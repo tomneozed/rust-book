@@ -1,4 +1,5 @@
 // #[cfg(test)] -> ce code ne sera compilé et exécuté qu'avec 'cargo test' (et non pas 'cargo build') -> gain de temps
+use langagesFonctionnels::langagesFonctionnels;
 #[cfg(test)]
 mod tests {
     #[test]
