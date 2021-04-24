@@ -3,7 +3,8 @@ mod erreurs;
 mod collections;
 mod generiques;
 mod tests;
-mod langagesFonctionnels;
+mod langages_fonctionnels;
+mod pointeurs;
 
 // Imports
 use std::{borrow::BorrowMut, collections::HashMap, io, ops::Div};
@@ -12,7 +13,8 @@ use collections::collections;
 use erreurs::gestion_des_erreurs;
 use generiques::generiques;
 use tests::tests;
-use langagesFonctionnels::langagesFonctionnels;
+use langages_fonctionnels::langages_fonctionnels;
+use pointeurs::pointeurs_intelligents;
 
 use rust_book::CouleurPrimaire;
 use rust_book::mixer;
@@ -23,7 +25,8 @@ fn main() {
     //gestion_des_erreurs();
     // generiques();
     // tests();
-    // langagesFonctionnels();
+    // langages_fonctionnels();
+    pointeurs_intelligents();
 
     let rouge = CouleurPrimaire::Rouge;
     let jaune = CouleurPrimaire::Jaune;

@@ -2,7 +2,7 @@ use std::fmt::Display;
 use std::thread;
 use std::time::Duration;
 
-pub fn langagesFonctionnels() {
+pub fn langages_fonctionnels() {
 
     println!("RUST BOOK - 13. Les fonctionnalités des langages fonctionnels : les itérateurs et les fermetures");
 
