@@ -5,6 +5,7 @@ mod generiques;
 mod tests;
 mod langages_fonctionnels;
 mod pointeurs;
+mod concurrence;
 
 // Imports
 use std::{borrow::BorrowMut, collections::HashMap, io, ops::Div};
@@ -15,6 +16,7 @@ use generiques::generiques;
 use tests::tests;
 use langages_fonctionnels::langages_fonctionnels;
 use pointeurs::pointeurs_intelligents;
+use concurrence::concurrence;
 
 use rust_book::CouleurPrimaire;
 use rust_book::mixer;
@@ -26,9 +28,10 @@ fn main() {
     // generiques();
     // tests();
     // langages_fonctionnels();
-    pointeurs_intelligents();
+    // pointeurs_intelligents();
+    concurrence();
 
-    let rouge = CouleurPrimaire::Rouge;
-    let jaune = CouleurPrimaire::Jaune;
-    mixer(rouge, jaune);
+    // let rouge = CouleurPrimaire::Rouge;
+    // let jaune = CouleurPrimaire::Jaune;
+    // mixer(rouge, jaune);
 }
