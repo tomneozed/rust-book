@@ -6,6 +6,7 @@ mod tests;
 mod langages_fonctionnels;
 mod pointeurs;
 mod concurrence;
+mod poo;
 
 // Imports
 use std::{borrow::BorrowMut, collections::HashMap, io, ops::Div};
@@ -17,6 +18,7 @@ use tests::tests;
 use langages_fonctionnels::langages_fonctionnels;
 use pointeurs::pointeurs_intelligents;
 use concurrence::concurrence;
+use poo::poo;
 
 use rust_book::CouleurPrimaire;
 use rust_book::mixer;
@@ -29,7 +31,8 @@ fn main() {
     // tests();
     // langages_fonctionnels();
     // pointeurs_intelligents();
-    concurrence();
+    // concurrence();
+    poo();
 
     // let rouge = CouleurPrimaire::Rouge;
     // let jaune = CouleurPrimaire::Jaune;
