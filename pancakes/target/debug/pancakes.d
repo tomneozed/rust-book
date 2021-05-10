@@ -1,0 +1,1 @@
+/home/peloche/prog/rust-book/projects/rust-book/pancakes/target/debug/pancakes: /home/peloche/prog/rust-book/projects/rust-book/hello_macro/hello_macro_derive/src/lib.rs /home/peloche/prog/rust-book/projects/rust-book/hello_macro/src/lib.rs /home/peloche/prog/rust-book/projects/rust-book/pancakes/src/main.rs

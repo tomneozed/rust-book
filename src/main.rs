@@ -8,6 +8,7 @@ mod pointeurs;
 mod concurrence;
 mod poo;
 mod motifs;
+mod fonctionnalites_avancees;
 
 // Imports
 use std::{borrow::BorrowMut, collections::HashMap, io, ops::Div};
@@ -24,6 +25,7 @@ use motifs::motifs;
 
 use rust_book::CouleurPrimaire;
 use rust_book::mixer;
+use fonctionnalites_avancees::fonctionnalites_avancees;
 
 
 fn main() {
@@ -35,7 +37,8 @@ fn main() {
     // pointeurs_intelligents();
     // concurrence();
     // poo();
-    motifs();
+    // motifs();
+    fonctionnalites_avancees();
 
     // let rouge = CouleurPrimaire::Rouge;
     // let jaune = CouleurPrimaire::Jaune;
